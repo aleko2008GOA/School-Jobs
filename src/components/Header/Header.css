@@ -1,0 +1,22 @@
+.header-styles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid;
+    padding: 10px;
+}
+
+.header-styles img {
+    width: 100px;
+    height: auto;
+}
+
+.header-styles nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header-styles nav a {
+    font-size: 20px;
+    color: red;
+}
