@@ -11,6 +11,15 @@ function Header(){
             <nav>
                 <Link to='/'>Programs</Link>
                 <Link to='/contact-us'>Contact us</Link>
+                <Link to='/professions'>Professions</Link>
+                <Link to='/requests'>Requests</Link>
+                <Link to='/test'>Test</Link>
+                <Link to='/sign-in'>
+                    <button>Sign In</button>
+                </Link>
+                <Link to='/sign-up'>
+                    <button>Sign up</button>
+                </Link>
             </nav>
         </div>
     );
