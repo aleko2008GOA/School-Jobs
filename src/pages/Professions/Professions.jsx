@@ -10,7 +10,8 @@ function Professions(){
 
     return (
         <>
-            <nav className='home-nav'>
+            <Outlet />
+            <nav className='professions-nav'>
                 {categories.map(obj => (
                     <section>
                         <h1>{obj.title}</h1>
@@ -29,8 +30,6 @@ function Professions(){
                     </section>
                 ))}
             </nav>
-
-            <Outlet />
         </>
     );
 }

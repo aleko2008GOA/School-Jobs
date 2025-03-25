@@ -7,6 +7,7 @@ function Header(){
         <div className='header-styles'>
             <Link to='/'>
                 <img src={logo} />
+                <h1>საიტის სახელი</h1>
             </Link>
             <nav>
                 <Link to='/'>Programs</Link>
@@ -14,12 +15,6 @@ function Header(){
                 <Link to='/professions'>Professions</Link>
                 <Link to='/requests'>Requests</Link>
                 <Link to='/test'>Test</Link>
-                <Link to='/sign-in'>
-                    <button>Sign In</button>
-                </Link>
-                <Link to='/sign-up'>
-                    <button>Sign up</button>
-                </Link>
             </nav>
         </div>
     );
