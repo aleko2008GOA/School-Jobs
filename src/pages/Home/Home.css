@@ -5,3 +5,9 @@
 #homepage p{
     text-align: justify;
 }
+
+@media (max-width: 480px) {
+    #homepage {
+        padding: 0 10px;
+    }
+}
