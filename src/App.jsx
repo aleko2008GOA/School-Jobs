@@ -13,7 +13,7 @@ import Programmer from './pages/Professions/Programmer/Programmer.jsx';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
       {/* main components */}
       <Header />
       
