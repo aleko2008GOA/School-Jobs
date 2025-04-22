@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 import Header from './components/Header/Header.jsx';
@@ -10,25 +9,39 @@ import Test from './pages/Tests/Test.jsx';
 import Doctor from './pages/Professions/Doctor/Doctor.jsx';
 import Engineer from './pages/Professions/Engineer/Engineer.jsx';
 import Programmer from './pages/Professions/Programmer/Programmer.jsx';
+import Footer from './components/Footer/Footer.jsx';
+import SignUp from './pages/SignUp/SignUp.jsx';
+import SignIn from './pages/SignIn/signIn.jsx';
+import About from './pages/AboutUs/About.jsx';
+import Calendar from './pages/Calendar/Calendar.jsx';
 
 function App() {
   return (
     <BrowserRouter basename='/'>
       {/* main components */}
-      <Header />
-      
-      {/* links */}
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/professions' element={<Professions />}>
-          <Route path='doctor' element={<Doctor />} />
-          <Route path='engineer' element={<Engineer />} />
-          <Route path='programmer' element={<Programmer />} />
-        </Route>
-        <Route path='/contact-us' element={<Contact />} />
-        <Route path='/requests' element={<Requests />} />
-        <Route path='/test' element={<Test />} />
-      </Routes>
+      <div id='website'>
+        <Header />
+        
+        {/* links */}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/professions' element={<Professions />}>
+            <Route path='doctor' element={<Doctor />} />
+            <Route path='engineer' element={<Engineer />} />
+            <Route path='programmer' element={<Programmer />} />
+          </Route>
+          <Route path='/contact-us' element={<Contact />} />
+          <Route path='/requests' element={<Requests />} />
+          <Route path='/about-us' element={<About />} />
+          <Route path='/calendar' element={<Calendar />} />
+          <Route path='/sign-up' element={<SignUp />} />
+          <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/test' element={<Test />} />
+        </Routes>
+
+        {/* footer */}
+        <Footer />
+      </div>
     </BrowserRouter>
   )
 }

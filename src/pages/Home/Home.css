@@ -1,13 +1,226 @@
 #homepage {
-    padding: 0 10%;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
-#homepage p{
-    text-align: justify;
+#homepage video {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 20px;
 }
 
-@media (max-width: 480px) {
-    #homepage {
-        padding: 0 10px;
-    }
+#homepage .successful-students-short, #homepage .popular-courses-short{
+    display: flex;
+    flex-direction: column;
+}
+
+#homepage .successful-students-short > *, #homepage .popular-courses-short > * { margin: 0px; }
+
+#homepage .successful-students-short span, #homepage .popular-courses-short span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#homepage .successful-students-short span p, #homepage .popular-courses-short span p {
+    max-width: 70%;
+}
+
+#homepage .successful-students-short button, #homepage .popular-courses-short button {
+    padding: 10px 15px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+
+#homepage .successful-students-short button:hover, #homepage .popular-courses-short button:hover{
+    background-color: rgb(245, 245, 245);
+}
+#homepage .successful-students-short button:active, #homepage .popular-courses-short button:active{
+    background-color: rgb(235, 235, 235);
+}
+
+#homepage .successful-students, #homepage .popular-courses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#homepage .successful-students > div {
+    background-color: rgb(250, 250, 250);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#homepage .successful-students div > p {
+    background-color: white;
+    border-radius: 15px;
+    margin: 0;
+    padding: 30px;
+}
+
+#homepage .successful-students div > div {
+    background-color: rgb(250, 250, 250);
+    padding: 20px 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#homepage .successful-students div div span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+#homepage .successful-students button {
+    padding: 10px 15px;
+    background-color: rgb(245, 245, 245);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+
+#homepage .successful-students button:hover {
+    background-color: rgb(235, 235, 235);
+}
+#homepage .successful-students button:active {
+    background-color: rgb(225, 225, 225);
+}
+
+#homepage .successful-students img {
+    height: 50px;
+}
+
+#homepage .popular-courses > div {
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: white;
+    gap: 40px;
+}
+
+#homepage .popular-courses > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#homepage .popular-courses > div > div > * { margin: 0; }
+
+#homepage .popular-courses span {
+    display: flex;
+    justify-content: space-between;
+}
+
+#homepage .popular-courses img {
+    border-radius: 10px;
+}
+
+#homepage .popular-courses span span {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#homepage .popular-courses label {
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#homepage .popular-courses div button {
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    background-color: rgb(245, 245, 245);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+
+#homepage .popular-courses div button:hover {
+    background-color: rgb(235, 235, 235);
+}
+#homepage .popular-courses div button:active {
+    background-color: rgb(225, 225, 225);
+}
+
+#homepage .asked-questions {
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 50px;
+}
+
+#homepage .questions-short {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#homepage .questions-short * {
+    margin: 0;
+}
+
+#homepage .questions {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#homepage .questions > div {
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#homepage .questions > div > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#homepage .questions h4{
+    margin: 0;
+}
+
+#homepage .questions button{
+    font-size: 50px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(202, 235, 255);
+}
+
+#homepage .questions span{
+    transition: all 1s;
+}
+
+#homepage .questions p {
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transition: all 1s;
 }

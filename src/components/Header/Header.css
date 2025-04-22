@@ -1,30 +1,54 @@
-.header-styles {
+#header-styles nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    padding: 15px 4%;
+}
+
+#header-styles {
     padding: 10px;
 }
 
-.header-styles img {
-    width: 100px;
+#header-styles img {
+    width: 50px;
     height: auto;
+    margin-right: 20px;
+    padding: 0 0 5px 0;
 }
 
-.header-styles nav {
+#header-styles nav span {
     display: flex;
-    gap: 20px;
-}
-
-.header-styles nav a {
-    font-size: 20px;
-    color: red;
-}
-
-.header-styles a {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+}
+
+#header-styles nav .main-nav{
+    overflow-x: hidden;
+}
+
+#header-styles .login{
+    background-color: rgb(0, 162, 255);
+    color: white;
+}
+
+#header-styles .active{
+    background-color: rgb(230, 230, 230);
+}
+
+#header-styles a {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.5s;
+    margin: 0 2px;
+}
+
+#header-styles a:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+#header-styles a:active {
+    background-color: lightgrey;
 }
