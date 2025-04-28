@@ -11,6 +11,7 @@ function Professions(){
     return (
         <>
             <Outlet />
+            <h1>It is not what it shoul be...</h1>
             <nav className='professions-nav'>
                 {categories.map(obj => (
                     <section>
