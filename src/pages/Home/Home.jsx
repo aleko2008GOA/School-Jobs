@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 function Home(){
     const [questionDrowp, setQuestionDrop] = useState([0, false]);
+    const [caruselIndex, setCaruselIndex] = useState(0);
 
     const location = useLocation();
 
@@ -105,12 +106,34 @@ function Home(){
         }
     ];
 
+    const caruselImages = [
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEcOYN57DOwU0mvfwhTxAQndvPHeKOnM67dg&s',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfUvEV4qKn_lxckDDd01lspzo2a9djhy4ZqQ&s'
+    ]
+
     function handledropDown(e, index){
         setQuestionDrop([index, questionDrowp[0] === index ? !questionDrowp[1] : true]);
     }
 
+    function handleCarusel(dir){
+        if(dir === 'left')
+            setCaruselIndex(caruselIndex > 0 ? caruselIndex - 1 : caruselImages.length - 1);
+        if(dir === 'right')
+            setCaruselIndex(caruselIndex < caruselImages.length - 1 ? caruselIndex + 1 : 0);
+    }
+
     return (
         <div id="homepage">
+            <div className='carusel'>
+                <div className='images'>
+                    <img src = {caruselImages[caruselIndex]} />
+                </div>
+                <div className='controls'>
+                    <div className='control-left' onClick={() => handleCarusel('left')}></div>
+                    <div className='control-right' onClick={() => handleCarusel('right')}></div>
+                </div>
+            </div>
             <video className='main-video' controls>
                 <source/>
                 Your brouser does not support this video

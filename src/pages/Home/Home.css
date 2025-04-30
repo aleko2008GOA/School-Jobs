@@ -11,6 +11,57 @@
     margin-top: 20px;
 }
 
+#homepage .carusel {
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+    height: 90vh;
+}
+
+#homepage .images {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#homepage .images * {
+    height: 100%;
+}
+
+#homepage .controls {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#homepage .controls * {
+    flex: 1;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#homepage .control-left:hover, #homepage .control-right:hover {
+    opacity: 0.2;
+}
+#homepage .control-left:active, #homepage .control-right:active {
+    opacity: 0.4;
+}
+
+#homepage .control-left {
+    background: linear-gradient(to right, rgba(0,0,0,0.3), transparent);
+}
+#homepage .control-right {
+    background: linear-gradient(to left, rgba(0,0,0,0.6), transparent);
+}
+
 #homepage .successful-students-short, #homepage .popular-courses-short{
     display: flex;
     flex-direction: column;
