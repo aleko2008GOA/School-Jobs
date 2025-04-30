@@ -1,0 +1,43 @@
+#video-page {
+    padding: 0 5%;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+}
+
+#video-page > div {
+    display: flex;
+    gap: 50px;
+}
+
+#video-page > div > * {
+    flex: 1;
+}
+
+#video-page > div > * {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#video-page button {
+    width: 100%;
+    background-color: rgb(48, 170, 0);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.5s;
+}
+
+#video-page button:hover {
+    background-color: rgb(92, 212, 44);
+}
+
+#video-page button:active {
+    background-color: rgb(33, 116, 0);
+}
+
+#video-page video {
+    border-radius: 10px;
+}

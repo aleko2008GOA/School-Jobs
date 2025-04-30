@@ -131,13 +131,10 @@ function Home(){
                 </div>
                 <div className='controls'>
                     <div className='control-left' onClick={() => handleCarusel('left')}></div>
+                    <div className='page' onClick={() => window.location.href = '/video'}></div>
                     <div className='control-right' onClick={() => handleCarusel('right')}></div>
                 </div>
             </div>
-            <video className='main-video' controls>
-                <source/>
-                Your brouser does not support this video
-            </video>
             <div className='successful-students-short' id='homepage-successful-students'>
                 <h1>წარმატებული მოსწავლეები</h1>
                 <span>

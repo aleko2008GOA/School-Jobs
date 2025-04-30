@@ -5,12 +5,6 @@
     gap: 50px;
 }
 
-#homepage video {
-    width: 100%;
-    border-radius: 15px;
-    margin-top: 20px;
-}
-
 #homepage .carusel {
     width: 100%;
     margin: 20px 0;
@@ -48,6 +42,8 @@
     transition: opacity 0.5s;
 }
 
+#homepage .controls .page{ cursor: pointer; }
+
 #homepage .control-left:hover, #homepage .control-right:hover {
     opacity: 0.2;
 }
@@ -56,10 +52,10 @@
 }
 
 #homepage .control-left {
-    background: linear-gradient(to right, rgba(0,0,0,0.3), transparent);
+    background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
 }
 #homepage .control-right {
-    background: linear-gradient(to left, rgba(0,0,0,0.6), transparent);
+    background: linear-gradient(to left, rgba(0,0,0,1), transparent);
 }
 
 #homepage .successful-students-short, #homepage .popular-courses-short{

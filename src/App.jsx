@@ -14,6 +14,8 @@ import SignUp from './pages/SignUp/SignUp.jsx';
 import SignIn from './pages/SignIn/SignIn.jsx';
 import About from './pages/AboutUs/About.jsx';
 import Calendar from './pages/Calendar/Calendar.jsx';
+import Video from './pages/Video/Video.jsx';
+import Info from './pages/CourseInfo/Info.jsx';
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
           <Route path='/sign-up' element={<SignUp />} />
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/test' element={<Test />} />
+          <Route path='/video' element={<Video />} />
+          <Route path='/info' element={<Info />} />
         </Routes>
 
         {/* footer */}
