@@ -4,3 +4,20 @@
     flex-direction: column;
     gap: 50px;
 }
+
+#info button {
+    background-color: rgb(48, 170, 0);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.5s;
+}
+
+#info button:hover {
+    background-color: rgb(92, 212, 44);
+}
+
+#info button:active {
+    background-color: rgb(33, 116, 0);
+}

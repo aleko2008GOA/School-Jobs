@@ -19,6 +19,7 @@ function Info(){
                     Lorem imsulp Lorem imsulp Lorem imsulp Lorem imsulp Lorem imsulp Lorem imsulp
                     Lorem imsulp Lorem imsulp Lorem imsulp Lorem imsulp Lorem imsulp
                 </p>
+                <button>No function button (Yet)...</button>
             </div>
         </div>
     )
