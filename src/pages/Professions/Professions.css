@@ -1,30 +1,128 @@
-.professions-nav {
+#professions {
+    background-color: white;
+}
+
+#professions .intro {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin: 0;
+    margin: 0 5%;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    padding: 40px 0;
+}
+
+#professions .intro * {
+    flex: 1;
+}
+
+#professions .courses{
+    margin: 50px 0;
+    padding: 0 8%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    gap: 100px;
+}
+
+#professions .courses .course {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+
+#professions .courses .course .description {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#professions .courses .course .description div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#professions .courses .course .description div * {
+    margin: 0;
+    padding: 0;
+}
+
+#professions .courses .course .imgs {
+    display: flex;
     gap: 20px;
 }
 
-.professions-nav section {
-    border-radius: 10px;
-    padding: 10px;
+#professions .courses .course .imgs * {
+    flex: 1;
+    border-radius: 5px;
 }
 
-.professions-nav section h1 {
-    margin: 10px auto;
+#professions .courses button {
+    padding: 10px 15px;
+    border: 1px solid rgb(230, 230, 230);
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    transition: background-color 0.5s;
 }
 
-.professions-nav section:nth-child(1) {
-    border: 3px solid rgb(200, 0, 0);
-    background-color: rgba(200, 0, 0, 0.4);
+#professions .courses button:hover{    
+    background-color: rgb(235, 235, 235);
+}
+#professions .courses button:active{
+    background-color: rgb(230, 230, 230);
 }
 
-.professions-nav section:nth-child(2) {
-    border: 3px solid rgb(0, 200, 0);
-    background-color: rgba(0, 200, 0, 0.4);
+#professions .courses .course .about {
+    display: flex;
+    justify-content: space-between;
 }
 
-.professions-nav section:nth-child(3) {
-    border: 3px solid rgb(0, 0, 200);
-    background-color: rgba(0, 0, 200, 0.4);
+#professions .courses .course .about span {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#professions .courses .course .about label {
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#professions .courses .course .syllabus {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+}
+
+#professions .courses .course .syllabus > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+#professions .courses .course .syllabus > div > div {
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    padding: 0 30px;
+}
+
+#professions .courses .course .syllabus > div > div:not(:last-child) {
+    border-right: 1px solid rgb(230, 230, 230);
+}
+
+#professions .courses .course .syllabus h1, #professions .courses .course .syllabus p {
+    margin: 0;
+    padding: 0;
+}
+
+#professions .courses .course .syllabus h5 {
+    border-bottom: 1px solid rgb(230, 230, 230);
+    margin: 0;
+    padding: 20px;
 }

@@ -16,10 +16,12 @@ import About from './pages/AboutUs/About.jsx';
 import Calendar from './pages/Calendar/Calendar.jsx';
 import Video from './pages/Video/Video.jsx';
 import Info from './pages/CourseInfo/Info.jsx';
+import ScrollToTop from './ScrollAnimation.jsx';
 
 function App() {
   return (
     <BrowserRouter basename='/'>
+      <ScrollToTop />
       {/* main components */}
       <div id='website'>
         <Header />

@@ -1,37 +1,50 @@
 import { Link, Outlet } from 'react-router-dom';
 import './Professions.css';
+import { pageCurses } from '../../courses';
 
 function Professions(){
-    const categories = [
-        { title: 'Medicine', path: 'doctor' },
-        { title: 'Engineer', path: 'engineer' },
-        { title: 'Programmer', path: 'programmer' }
-    ];
-
     return (
-        <>
+        <div id="professions">
             <Outlet />
-            <h1>It is not what it shoul be...</h1>
-            <nav className='professions-nav'>
-                {categories.map(obj => (
-                    <section>
-                        <h1>{obj.title}</h1>
-                        <details>
-                            <summary>What will I learn?</summary>
-                            <p>
-                                la la alalslas als alls alas jsadls fadldas hlsad klsadh slahl 
-                                dssdha lsdh lashd lasdh lsahd lsadh lsadsdaljhdslsad  
-                                dslald sl asdlhsda idlsaldasjlkasdjsad h sadl adsl dsahld 
-                                aslhdas l daslhdsa lhsad hldsa l dsalhds a
-                            </p>
-                        </details>
-                        <Link to={obj.path}>
-                            <button>Hell yeah!</button>
-                        </Link>
-                    </section>
+            <div className='intro'>
+                <h1>ვიდეოების და ჩვენი თანამშრომელი კურსების ასდ</h1>
+                <p>ასდნასიდნსაჯკდჯაკნსდნასნდკანსჯდნასნკდკნასდნკანს საკნჯდ კადკჯ ასჯდნაჯსკ დნასდასკ დასდსდ ნასჯკ დადნ .  ნჯსანკ დდნადნსჯდ სნჯ .  ჯნდსნსნნსდნ სნდჯნსდნსნჯდნჯ . სჯდნდნჯსჯდჯს ს .  სჯდჯსნდნსნდჯსდჯ ს დ სდ</p>
+            </div>
+            <div className='courses'>
+                {pageCurses.map((val, index) =>(
+                    <div key={index} className='course'>
+                        <div className='description'>
+                            <div>
+                                <h4>{val.name}</h4>
+                                <p>{val.description}</p>
+                            </div>
+                            <button>ნახე კურსი</button>
+                        </div>
+                        <div className='imgs'>
+                            {val.src.map((ing, k) => <img key={k} src={ing} />)}
+                        </div>
+                        <div className='about'>
+                            <span>
+                                <label>{val.week} კვირა</label>
+                                <label>{val.difficulity}</label>
+                            </span>
+                            <span>{val.author}</span>
+                        </div>
+                        <div className='syllabus'>
+                            <h5>სილაბუსი</h5>
+                            <div>
+                                {val.sillabus.map((day, k) => (
+                                    <div>
+                                        <h1>0{k + 1}</h1>
+                                        <p>{day}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 ))}
-            </nav>
-        </>
+            </div>
+        </div>
     );
 }
 

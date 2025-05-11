@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { pageCurses } from '../../courses';
 
 function Home(){
     const [questionDrowp, setQuestionDrop] = useState([0, false]);
@@ -43,40 +44,7 @@ function Home(){
         }
     ];
 
-    const courses = [
-        {
-            name: 'ვებ-დიზაინის საწყისები',
-            description: 'ისწავლე ვებ-დიზაინის საფუძვლები, მათ შორის HTML, CSS და დიზაინის პრინციპები',
-            month: 4,
-            difficulity: 'დამწყები',
-            sponsor: 'ჯეობალი JeoLab',
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s'
-        },
-        {
-            name: 'UI/UX დიზაინი',
-            description: 'ისწავლე ვებ-დიზაინის საფუძვლები, მათ შორის HTML, CSS და დიზაინის პრინციპები',
-            month: 6,
-            difficulity: 'დამწყები',
-            sponsor: 'TBC',
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s'
-        },
-        {
-            name: 'Mobile App Development',
-            description: 'ისწავლე ვებ-დიზაინის საფუძვლები, მათ შორის HTML, CSS და დიზაინის პრინციპები',
-            month: 8,
-            difficulity: 'საშუალო',
-            sponsor: 'Step It Academy',
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s'
-        },
-        {
-            name: 'გრაფიკული დიზაინი',
-            description: 'ისწავლე ვებ-დიზაინის საფუძვლები, მათ შორის HTML, CSS და დიზაინის პრინციპები',
-            month: 10,
-            difficulity: 'რთული',
-            sponsor: 'ჯეობალი JeoLab',
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s'
-        }
-    ];
+    const courses = pageCurses;
 
     const questions = [
         {
@@ -164,10 +132,10 @@ function Home(){
                 {courses.map((course, index) => (
                     <div key={index}>
                         <div>
-                            <img src={course.src} />
+                            <img src={course.src[0]} />
                             <span>
                                 <span>
-                                    <label>{course.month} კვირა</label>
+                                    <label>{course.week} კვირა</label>
                                     <label>{course.difficulity}</label>
                                 </span>
                                 <label>{course.sponsor}</label>

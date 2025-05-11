@@ -11,6 +11,9 @@ h4 { font-size: 1.25rem; }
 h5 { font-size: 1rem; }
 h6 { font-size: 0.875rem; }
 
+button { font-size: 1rem; }
+p { font-size: 1rem; }
+
 #website {
   display: flex;
   flex-direction: column;
