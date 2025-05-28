@@ -1,11 +1,16 @@
 {
     "compilerOptions": {
-        "target": "es6",
+        "target": "es2020",
         "module": "esnext",
         "moduleResolution": "node",
-        "allowJs": true
+        "allowJs": true,
+        "checkJs": true,
+        "allowSyntheticDefaultImports": true,
+        "types": ["node"],
+        "jsx": "react-jsx"
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "api/**/*"
     ]
 }

@@ -1,12 +1,13 @@
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { pageCurses } from '../../courses';
+import { blogs, statistic } from '../../courses';
 
 function Home(){
-    const [questionDrowp, setQuestionDrop] = useState([0, false]);
     const [caruselIndex, setCaruselIndex] = useState(0);
+    const [popularBlogs, setPopularBlogs] = useState(null);
 
     const location = useLocation();
 
@@ -17,62 +18,9 @@ function Home(){
         }
     }, [location]);
 
-    const students = [
-        {
-            name: 'ლიკა ასდა',
-            text: `ვებდიზაინის კურსმა მომცა მტკიცე საფუძველი. 
-                ინსტრუქტორები იყვნენ მცოდნეები და მხარდამჭერები. ძალიან გირჩევთ კურსს!`,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s'
-        },
-        {
-            name: 'იაკობ სდად',
-            text: `ვებდიზაინის კურსმა მომცა მტკიცე საფუძველი. 
-                ინსტრუქტორები იყვნენ მცოდნეები და მხარდამჭერები. ძალიან გირჩევთ კურსს!`,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s'
-        },
-        {
-            name: 'უმოლი ასლად',
-            text: `ვებდიზაინის კურსმა მომცა მტკიცე საფუძველი. 
-                ინსტრუქტორები იყვნენ მცოდნეები და მხარდამჭერები. ძალიან გირჩევთ კურსს!`,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s'
-        },
-        {
-            name: 'შოთა სდასად',
-            text: `ვებდიზაინის კურსმა მომცა მტკიცე საფუძველი. 
-                ინსტრუქტორები იყვნენ მცოდნეები და მხარდამჭერები. ძალიან გირჩევთ კურსს!`,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s'
-        }
-    ];
-
-    const courses = pageCurses;
-
-    const questions = [
-        {
-            name: 'როგორ უნდა ავირჩიო პროფესია?',
-            answer: 'შენ უნდა გააკეთო ეს და ამაში დაგეხმარება ეს: ',
-            link: '/'
-        },
-        {
-            name: 'როგორ უნდა ავირჩიო პროფესია?',
-            answer: 'შენ უნდა გააკეთო ეს და ამაში დაგეხმარება ეს: ',
-            link: '/'
-        },
-        {
-            name: 'როგორ უნდა ავირჩიო პროფესია?',
-            answer: 'შენ უნდა გააკეთო ეს და ამაში დაგეხმარება ეს: ',
-            link: '/'
-        },
-        {
-            name: 'როგორ უნდა ავირჩიო პროფესია?',
-            answer: 'შენ უნდა გააკეთო ეს და ამაში დაგეხმარება ეს: ',
-            link: '/'
-        },
-        {
-            name: 'როგორ უნდა ავირჩიო პროფესია?',
-            answer: 'შენ უნდა გააკეთო ეს და ამაში დაგეხმარება ეს: ',
-            link: '/'
-        }
-    ];
+    useEffect(() => {
+        setPopularBlogs(Object.values(blogs).sort((a, b) => b.rate - a.rate).slice(0, 2));
+    }, [])
 
     const caruselImages = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s',
@@ -80,15 +28,33 @@ function Home(){
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfUvEV4qKn_lxckDDd01lspzo2a9djhy4ZqQ&s'
     ]
 
-    function handledropDown(e, index){
-        setQuestionDrop([index, questionDrowp[0] === index ? !questionDrowp[1] : true]);
-    }
-
     function handleCarusel(dir){
         if(dir === 'left')
             setCaruselIndex(caruselIndex > 0 ? caruselIndex - 1 : caruselImages.length - 1);
         if(dir === 'right')
             setCaruselIndex(caruselIndex < caruselImages.length - 1 ? caruselIndex + 1 : 0);
+    }
+
+    async function handleSubmit(event){
+        event.preventDefault();
+        const question = event.target.elements.question.value;
+        event.target.reset();
+
+        try {
+            const res = await fetch('/api/server', {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain' },
+                body: question
+            });
+            
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(`Status ${res.status}: ${text}`);
+            } else console.log("success");
+        } catch (err) {
+            console.error('Error while sending responce: ', err);
+            alert('Can not send an email, please, contact us manualy');
+        }
     }
 
     return (
@@ -103,141 +69,76 @@ function Home(){
                     <div className='control-right' onClick={() => handleCarusel('right')}></div>
                 </div>
             </div>
-            <div className='successful-students-short' id='homepage-successful-students'>
-                <h1>წარმატებული მოსწავლეები</h1>
-                <span>
-                    <p>ვებდიზაინის კურსმა მომცა მტკიცე საფუძველი. ინსტრუქტორები იყვნენ მცოდნეები და მხარდამჭერები</p>
-                    <Link><button>ყველას ნახვა</button></Link>
-                </span>
-            </div>
-            <div className='successful-students'>
-                {students.map((student, index) => (
-                    <div key={index}>
-                        <p>{student.text}</p>
+            <div className="general-intoduction">
+                {popularBlogs && popularBlogs.length > 0 ? 
+                    <div className="blogs">
                         <div>
-                            <span><img src={student.img} />{student.name}</span>
-                            <Link><button>იხილეთ სრულად</button></Link>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            <div className='popular-courses-short' id='homepage-popular-courses'>
-                <h1>პოპულალური კურსები</h1>
-                <span>
-                    <p>ჩვენი მეგობარი სასწავლო დაწესებულებები, ეს კურსები დაგეხმარებათ შეარჩიოთ თქვენი პროფესია და მიიღოთ გამოცდილება</p>
-                    <Link to='/professions'><button>ყველას ნახვა</button></Link>
-                </span>
-            </div>
-            <div className='popular-courses'>
-                {courses.map((course, index) => (
-                    <div key={index}>
-                        <div>
-                            <img src={course.src[0]} />
-                            <span>
-                                <span>
-                                    <label>{course.week} კვირა</label>
-                                    <label>{course.difficulity}</label>
-                                </span>
-                                <label>{course.sponsor}</label>
-                            </span>
-                            <h1>{course.name}</h1>
-                            <p>{course.description}</p>
-                        </div>
-                        <Link><button>ნახვა</button></Link>
-                    </div>
-                ))}
-            </div>
-            <div className='asked-questions' id='homepage-asked-questions'>
-                <div className='questions-short'>
-                    <h1>ხშირად დასმული შეკითხვები</h1>
-                    <p>კიდევ არის კითხვები? მოწერეთ მეილზე</p>
-                </div>
-                <div className='questions'>
-                    {questions.map((question, index) => (
-                        <div key={index}>
+                            <div className='imgs' style={{ aspectRatio: popularBlogs[0].img.ratio }}><img src={popularBlogs[0].img.src} alt={popularBlogs[0].img.src} /></div>
                             <div>
-                                <h4>{question.name}</h4>
-                                <button onClick={(e) => handledropDown(e, index)}>
-                                    <span style={index === questionDrowp[0] && questionDrowp[1] ? {
-                                        display: 'inline-block',
-                                        transform: 'rotate(45deg)',
-                                        transformOrigin: 'center center'
-                                    } : null}>+</span>
-                                </button>
+                                <h1>{popularBlogs[0].profession}</h1>
+                                <div>
+                                    <p>{popularBlogs[0].description}</p>
+                                    <div>
+                                        <span>Rate: {popularBlogs[0].rate}</span>
+                                        <button>იხილეთ სრულად</button>
+                                    </div>
+                                </div>
                             </div>
-                            <p style={index === questionDrowp[0] && questionDrowp[1] ? {
-                                height: 'auto',
-                                paddingTop: '40px',
-                                marginTop: '30px',
-                                borderTop: '1px solid rgb(230, 230, 230)',
-                                opacity: 1
-                            } : null}>{question.answer} - <Link to={question.link}>ლინკი</Link></p>
                         </div>
-                    ))}
+                        <div>
+                            <div className='imgs' style={{ aspectRatio: popularBlogs[0].img.ratio }}><img src={popularBlogs[1].img.src} alt={popularBlogs[1].img.src} /></div>
+                            <div>
+                                <h1>{popularBlogs[1].profession}</h1>
+                                <div>
+                                    <p>{popularBlogs[1].description}</p>
+                                    <div>
+                                        <span>Rate: {popularBlogs[1].rate}</span>
+                                        <button>იხილეთ სრულად</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                : null}
+                <div className="about">
+                    <div className='statictic'>
+                    <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={statistic}>
+                            <CartesianGrid strokeDasharray="10 5" />
+                            <XAxis dataKey="name" />
+                            <YAxis />
+                            <Tooltip />
+                            <Legend />
+                            <Bar dataKey="vote" fill="#8884d8" />
+                        </BarChart>
+                    </ResponsiveContainer>
+                    </div>
+                    <div className='about-blogs'>
+                        <h1>რატომ შეიქმნა?</h1>
+                        <p>
+                            შეიქმნა რათა...
+                        </p>
+                    </div>
                 </div>
             </div>
-            {/* <div>
-                <p>
-                    დამატებითი დახმარების გარეშე, პროფესიის არჩევა შეიძლება გაუგებარი და 
-                    ხშირად რთული პროცესიც იყოს, განსაკუთრებით მაშინ, როდესაც არ იცი, 
-                    რა სფერო დაგაინტერესებს ან რომელი პროფესია დაგეხმარება ყველაზე მეტად 
-                    შენი მიზნების მიღწევაში. სწორედ ამ სირთულეების დაძლევის მიზნით, ჩვენ 
-                    შევქმენით პლატფორმა, რომელიც ხელს შეუწყობს სტუდენტებს, ახალგაზრდებსა 
-                    და ყველას, ვისაც ამ საკითხზე დაინტერესებული აქვს, უფრო ინფორმირებული 
-                    და ნდობის მქონე გადაწყვეტილებების მიღებაში.
-                </p>
-                <p>
-                    ჩვენი პლატფორმა მოიცავს სხვადასხვა სექციებს, რომელთა საშუალებითაც შეგიძლიათ 
-                    მიიღოთ ინფორმაცია სხვადასხვა პროფესიის, მათ შორის ყოველდღიური საქმიანობის, 
-                    საჭირო უნარების, განათლებისა და დასაქმების პერსპექტივებზე. პლატფორმა 
-                    აერთიანებს სხვადასხვა პროფესიის წარმომადგენლების ვიდეოებს, რომლებიც 
-                    უშუალოდ გვიამბობენ თავიანთი სფეროს შესახებ, გვიზიარებენ გამოცდილებას 
-                    და გვაწვდიან რჩევებს წარმატების მისაღწევად.
-                </p>
-                <h4>გსურს გაიგო მეტი პროფესიის შესახებ?</h4>
-                <p>
-                    მთავარ გვერდზე ნახავ მოკლე მიმოხილვას ჩვენი პლატფორმის შესახებ, 
-                    როგორც სტუდენტებისთვის, ისე პროფესიონალებისთვის, რაც დაგეხმარება 
-                    სწორი გადაწყვეტილების მიღებაში. აქვე შეგიძლიათ 
-                    აირჩიოთ ის სფეროები, რომლებიც ყველაზე მეტად გაინტერესებთ.
-                </p>
-                <h4>გაინტერესებს კონკრეტული პროფესია?</h4>
-                <p>
-                    გაფართოებული “პროფესიების გვერდზე” შეირჩევა სხვადასხვა სფერო: 
-                    ტექნოლოგიები, ხელოვნება, მედიცინა, ბიზნესი, განათლება და სხვა. 
-                    აქ შეხვალთ რეალური პროფესიონალების ინტერვიუებში, რომლებიც დეტალურად 
-                    იზიარებენ საკუთარ გამოცდილებას, პროფესიული გზის გასავლელ ეტაპებს, საჭირო 
-                    უნარებსა და ამა თუ იმ პროფესიასთან დაკავშირებულ გამოწვევებს.
-                </p>
-                <h4>გნებავთ თქვენი ინტერესების უკეთ გაგება?</h4>
-                <p>
-                    გამოკითხვის გვერდი წარმოადგენს სრულყოფილ შესაძლებლობას, 
-                    რათა თავად განსაზღვროთ, რა სფერო ან პროფესია თქვენთვის შეიძლება 
-                    იყოს ყველაზე საინტერესო. ეს გვერდი დაგვეხმარება უკეთ გავიგოთ, თუ 
-                    რა ტიპის კონტენტი და ვიდეოები იქნება სტუდენტებისთვის ყველაზე სასარგებლო. 
-                    მარტივი კითხვებით თქვენ შემოგვთავაზებთ თქვენი ინტერესი, რომლის 
-                    საფუძველზე შეგვიძლია შევარჩიოთ თქვენთვის შესაბამისი პროფესიონალები.
-                </p>
+            <div style={{borderBottom: "1px solid darkgrey", borderTop: "1px solid darkgrey"}}>
+                <h1>სამომავლო მიზნები</h1>
+                <p>ჩვენი მიზნები...</p>
             </div>
-            <h2>როგორ მუშაობს პლატფორმა?</h2>
-            <ul>
-                <li>
-                    მთავარი გვერდი: გთავაზობთ მოკლე და გასაგებ მიმოხილვას პლატფორმის 
-                    შესახებ, დაინტერესების სფეროების განხილვას და არჩევანს.
-                </li>
-                <li>
-                    პროფესია გვერდი: გაგაცნობთ სხვადასხვა სფეროს და პროფესიის წარმომადგენლებს, 
-                    რომლებიც გაუსაჯაროვებენ თავიანთი პროფესიული გზის შესახებ საინტერესო ფაქტებს.
-                </li>
-                <li>
-                    გამოკითხვის გვერდი: დაგვეხმარება უკეთ გავიგოთ თქვენი ინტერესები და მოთხოვნები.
-                </li>
-            </ul>
-            <p>
-                ჩვენი მიზანია, ხელი შევუწყოთ ახალგაზრდებს სწორი გადაწყვეტილებების მიღებაში, რათა მათ 
-                შეძლონ გაატარონ დრო იმ პროფესიაზე, რომელიც მათთვის ყველაზე საინტერესო და შესაბამისი იქნება.
-            </p>
-            <p>გადადგი პირველი ნაბიჯი და გაიგე, როგორ მიიღწევა შენი იდეალური კარიერა!</p> */}
+            <div className='questions'>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor='question-homepage'>Your question:</label>
+                    <input 
+                        type='text' 
+                        name='question' 
+                        id='question-homepage' 
+                        placeholder={["როგორ მივიღო მონაწიელობა გამოკითხვაში?", "სერვერზე შეცდომაა", "საიტი არ იმახსოვრებს ჩემს ქმედებებს", "არც ერთი პროფესია არ მომწონს", "სად არის ვიდეოები განთავსებული?", "რატომ არ იხსნება ვიდეო?"][Math.floor(Math.random() * 6)]} 
+                        required
+                    />
+                    <input type='submit' value='Send' />
+                </form>
+                <button>ჩემი პროფესიის არჩევა</button>
+            </div>
         </div>
     )
 }
