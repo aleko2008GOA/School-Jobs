@@ -135,9 +135,9 @@ function Home(){
                         placeholder={["როგორ მივიღო მონაწიელობა გამოკითხვაში?", "სერვერზე შეცდომაა", "საიტი არ იმახსოვრებს ჩემს ქმედებებს", "არც ერთი პროფესია არ მომწონს", "სად არის ვიდეოები განთავსებული?", "რატომ არ იხსნება ვიდეო?"][Math.floor(Math.random() * 6)]} 
                         required
                     />
-                    <input type='submit' value='Send' />
+                    <button type='submit'>Send</button>
                 </form>
-                <button>ჩემი პროფესიის არჩევა</button>
+                <Link to="/test"><button>ჩემი პროფესიის არჩევა</button></Link>
             </div>
         </div>
     )
