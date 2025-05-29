@@ -1,61 +1,14 @@
 #homepage {
-    padding: 0 5%;
+    padding: 20px 5%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
 }
 
-#homepage .carusel {
-    width: 100%;
-    margin: 20px 0;
-    position: relative;
-    height: 90vh;
-}
-
-#homepage .images {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#homepage .images * {
-    height: 100%;
-}
-
-#homepage .controls {
-    display: flex;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-#homepage .controls * {
-    flex: 1;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-#homepage .controls .page{ cursor: pointer; }
-
-#homepage .control-left:hover, #homepage .control-right:hover {
-    opacity: 0.2;
-}
-#homepage .control-left:active, #homepage .control-right:active {
-    opacity: 0.4;
-}
-
-#homepage .control-left {
-    background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
-}
-#homepage .control-right {
-    background: linear-gradient(to left, rgba(0,0,0,1), transparent);
+#homepage .about-program{
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 #homepage .general-intoduction {
@@ -112,9 +65,18 @@
     gap: 20px;
 }
 
+#homepage .goals {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
 #homepage .questions {
     display: flex;
     justify-content: space-between;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 #homepage button {
@@ -131,16 +93,4 @@
 
 #homepage button:active {
     background-color: rgb(235, 235, 235);
-}
-
-#homepage form input {
-    border: 1px solid rgb(200, 200, 200);
-    background-color: white;
-    transition: 0.5s background-color;
-    padding: 10px 15px;
-    outline: none;
-}
-
-#homepage form input:focus {
-    background-color: rgb(245, 245, 245);
 }

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { blogs, statistic } from '../../courses';
+import { blogs, statistic } from '../../courses.js';
+import Questions from '../../components/Questions/questions.jsx';
 
 function Home(){
-    const [caruselIndex, setCaruselIndex] = useState(0);
     const [popularBlogs, setPopularBlogs] = useState(null);
 
     const location = useLocation();
@@ -20,54 +20,14 @@ function Home(){
 
     useEffect(() => {
         setPopularBlogs(Object.values(blogs).sort((a, b) => b.rate - a.rate).slice(0, 2));
-    }, [])
-
-    const caruselImages = [
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mo1-1RPPCSd54lH3fcOeOWM1wRHxEZ3C1A&s',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEcOYN57DOwU0mvfwhTxAQndvPHeKOnM67dg&s',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfUvEV4qKn_lxckDDd01lspzo2a9djhy4ZqQ&s'
-    ]
-
-    function handleCarusel(dir){
-        if(dir === 'left')
-            setCaruselIndex(caruselIndex > 0 ? caruselIndex - 1 : caruselImages.length - 1);
-        if(dir === 'right')
-            setCaruselIndex(caruselIndex < caruselImages.length - 1 ? caruselIndex + 1 : 0);
-    }
-
-    async function handleSubmit(event){
-        event.preventDefault();
-        const question = event.target.elements.question.value;
-        event.target.reset();
-
-        try {
-            const res = await fetch('/api/server', {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/plain' },
-                body: question
-            });
-            
-            if (!res.ok) {
-                const text = await res.text();
-                throw new Error(`Status ${res.status}: ${text}`);
-            } else console.log("success");
-        } catch (err) {
-            console.error('Error while sending responce: ', err);
-            alert('Can not send an email, please, contact us manualy');
-        }
-    }
+    }, []);
 
     return (
         <div id="homepage">
-            <div className='carusel'>
-                <div className='images'>
-                    <img src = {caruselImages[caruselIndex]} />
-                </div>
-                <div className='controls'>
-                    <div className='control-left' onClick={() => handleCarusel('left')}></div>
-                    <div className='page' onClick={() => window.location.href = '/video'}></div>
-                    <div className='control-right' onClick={() => handleCarusel('right')}></div>
-                </div>
+            <div className='about-program'>
+                <h1>სამომავლო პროფესიების და კარიერული შესაძლებლობების გაცნობა</h1>
+                <p>პროგრამის შესახებ...</p><hr />
+                <h2>პოპულარული ბლოგები</h2>
             </div>
             <div className="general-intoduction">
                 {popularBlogs && popularBlogs.length > 0 ? 
@@ -121,22 +81,12 @@ function Home(){
                     </div>
                 </div>
             </div>
-            <div style={{borderBottom: "1px solid darkgrey", borderTop: "1px solid darkgrey"}}>
+            <div className="goals">
                 <h1>სამომავლო მიზნები</h1>
                 <p>ჩვენი მიზნები...</p>
             </div>
             <div className='questions'>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor='question-homepage'>Your question:</label>
-                    <input 
-                        type='text' 
-                        name='question' 
-                        id='question-homepage' 
-                        placeholder={["როგორ მივიღო მონაწიელობა გამოკითხვაში?", "სერვერზე შეცდომაა", "საიტი არ იმახსოვრებს ჩემს ქმედებებს", "არც ერთი პროფესია არ მომწონს", "სად არის ვიდეოები განთავსებული?", "რატომ არ იხსნება ვიდეო?"][Math.floor(Math.random() * 6)]} 
-                        required
-                    />
-                    <button type='submit'>Send</button>
-                </form>
+                <Questions />
                 <Link to="/test"><button>ჩემი პროფესიის არჩევა</button></Link>
             </div>
         </div>

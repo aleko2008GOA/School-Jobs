@@ -1,0 +1,65 @@
+#profession-Journalism {
+    padding: 20px 5%;
+}
+
+#profession-Journalism > div {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#profession-Journalism > div > * {
+    flex: 1;
+}
+
+#profession-Journalism > div .video iframe {
+    width: 100%;
+}
+
+#profession-Journalism > div .video > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#profession-Journalism > div .video > div > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#profession-Journalism > div .video > div span {
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 5px 10px;
+}
+
+#profession-Journalism > div > .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#profession-Journalism > div > .about p {
+    border: 1px solid;
+    padding: 20px;
+}
+
+#profession-Journalism button {
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    transition: 0.5s background-color;
+    padding: 10px 15px;
+}
+
+#profession-Journalism button:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#profession-Journalism button:active {
+    background-color: rgb(235, 235, 235);
+}

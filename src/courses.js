@@ -1,5 +1,6 @@
 const blogs = [
     {
+        title: "Journalism",
         profession: "ჟურნალისტიკა",
         author: "ნანა ჩოკორაია",
         description: "Alalalalalalla",
@@ -13,11 +14,12 @@ const blogs = [
             src: "https://www.youtube.com/embed/s_Fr_GO7fi4?si=4PQs9xGAqa_1NJj_",
             title: "YouTube video player",
             allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
-            referrerpolicy: "strict-origin-when-cross-origin",
+            referrerPolicy: "strict-origin-when-cross-origin",
             ratio: 560 / 315
         }
     },
     {
+        title: "Journalism",
         profession: "ჟურნალისტიკა",
         author: "ნანა ჩოკორაია",
         description: "Alalalalalalla",
@@ -31,7 +33,7 @@ const blogs = [
             src: "https://www.youtube.com/embed/s_Fr_GO7fi4?si=4PQs9xGAqa_1NJj_",
             title: "YouTube video player",
             allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
-            referrerpolicy: "strict-origin-when-cross-origin",
+            referrerPolicy: "strict-origin-when-cross-origin",
             ratio: 560 / 315
         }
     }

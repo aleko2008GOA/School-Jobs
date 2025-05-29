@@ -6,9 +6,6 @@ import Header from './components/Header/Header.jsx';
 import Professions from './pages/Professions/Professions.jsx';
 import Requests from './pages/Requests/Requests.jsx';
 import Test from './pages/Tests/Test.jsx';
-import Doctor from './pages/Professions/Doctor/Doctor.jsx';
-import Engineer from './pages/Professions/Engineer/Engineer.jsx';
-import Programmer from './pages/Professions/Programmer/Programmer.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import SignUp from './pages/SignUp/SignUp.jsx';
 import SignIn from './pages/SignIn/SignIn.jsx';
@@ -17,6 +14,7 @@ import Calendar from './pages/Calendar/Calendar.jsx';
 import Video from './pages/Video/Video.jsx';
 import Info from './pages/CourseInfo/Info.jsx';
 import ScrollToTop from './ScrollAnimation.jsx';
+import Journalism from './pages/Professions/Journalism/Journalism.jsx';
 
 function App() {
   return (
@@ -29,11 +27,8 @@ function App() {
         {/* links */}
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/professions' element={<Professions />}>
-            <Route path='doctor' element={<Doctor />} />
-            <Route path='engineer' element={<Engineer />} />
-            <Route path='programmer' element={<Programmer />} />
-          </Route>
+          <Route path='/professions' element={<Professions />} />
+            <Route path='/professions/journalism' element={<Journalism />} />
           <Route path='/contact-us' element={<Contact />} />
           <Route path='/requests' element={<Requests />} />
           <Route path='/about-us' element={<About />} />

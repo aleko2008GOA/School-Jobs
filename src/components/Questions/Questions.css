@@ -1,0 +1,27 @@
+#questions input {
+    border: 1px solid rgb(200, 200, 200);
+    background-color: white;
+    transition: 0.5s background-color;
+    padding: 10px 15px;
+    outline: none;
+}
+
+#questions input:focus {
+    background-color: rgb(245, 245, 245);
+}
+
+#questions button {
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    transition: 0.5s background-color;
+    padding: 10px 15px;
+}
+
+#questions button:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#questions button:active {
+    background-color: rgb(235, 235, 235);
+}
