@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { blogs } from "../../../courses.js";
 import './Journalism.css';
-import Questions from "../../../components/Questions/questions.jsx";
+import Questions from "../../../components/Questions/Questions.jsx";
 import { Link } from "react-router-dom";
 
 function Journalism(){

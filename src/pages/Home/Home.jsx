@@ -4,7 +4,7 @@ import './Home.css';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { blogs, statistic } from '../../courses.js';
-import Questions from '../../components/Questions/questions.jsx';
+import Questions from '../../components/Questions/Questions.jsx';
 
 function Home(){
     const [popularBlogs, setPopularBlogs] = useState(null);
