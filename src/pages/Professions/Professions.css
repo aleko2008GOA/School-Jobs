@@ -19,36 +19,41 @@
 }
 
 #professions .blogs > div {
-    flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
     background-color: white;
     border-radius: 20px;
     padding: 20px;
 }
 
-#professions .blogs > div > .imgs {
-    flex: 1;
-}
-
-#professions .blogs > div > .imgs img {
-    width: 100%;
-    height: 100%;
-}
-
-#professions .blogs > div > div:not(.imgs) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 2;
-}
-
-#professions .blogs > div > div:not(.imgs) > div > div {
+#professions .blogs > div > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    width: 100%;
+}
+
+#professions .blogs > div > div > div:not(.imgs) {
+    height: 100%;
+    flex: 4;
+}
+
+#professions .blogs > div > div > .imgs {
+    flex: 3;
+    margin: 10px 5px;
+}
+
+#professions .blogs h1 {
+    margin: 5px;
+}
+
+#professions .blogs > div > div > .imgs img {
+    width: 100%;
+    height: 100%;
 }
 
 #professions button {

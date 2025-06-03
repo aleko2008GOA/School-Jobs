@@ -18,16 +18,16 @@ function Professions(){
             <div className='blogs'>
                 {blogs && blogs.length > 0 ? blogs.sort((blog1, blog2) => filter === "HtoL" ? blog2.rate - blog1.rate : filter === "HtoL" ? blog1.rate - blog2.rate : blog1.title.localeCompare(blog2.title)).map((blog, index) => (
                     <div key={index}>
-                        <div className='imgs' style={{ aspectRatio: blog.img.ratio }}><img src={blog.img.src} alt={blog.img.src} /></div>
                         <div>
-                            <h1>{blog.profession}</h1>
+                            <div className='imgs' style={{ aspectRatio: blog.img.ratio }}><img src={blog.img.src} alt={blog.img.alt} /></div>
                             <div>
-                                <p>{blog.description}</p>
-                                <div>
-                                    <span>Rate: {blog.rate}</span>
-                                    <Link to={`/professions/${blog.title.toLowerCase()}`}><button>იხილეთ სრულად</button></Link>
-                                </div>
+                                <h1>{blog.profession}</h1>
+                                <p dangerouslySetInnerHTML={{__html: blog.description}}></p>
                             </div>
+                        </div>
+                        <div>
+                            <span style={{padding: "5px 10px", border: "1px solid", borderRadius: "2px"}}>შეფასება: {blog.rate}%</span>
+                            <Link to={`/professions/${blog.title.toLowerCase()}`}><button>იხილეთ სრულად</button></Link>
                         </div>
                     </div>
                 )) : null}

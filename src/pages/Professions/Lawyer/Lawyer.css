@@ -1,8 +1,8 @@
-#profession-Journalism {
+#profession-Lawyer {
     padding: 20px 5%;
 }
 
-#profession-Journalism > div {
+#profession-Lawyer > div {
     display: flex;
     gap: 30px;
     padding: 30px;
@@ -10,15 +10,15 @@
     border-radius: 10px;
 }
 
-#profession-Journalism > div > * {
+#profession-Lawyer > div > * {
     flex: 1;
 }
 
-#profession-Journalism > div .video iframe {
+#profession-Lawyer > div .video iframe {
     width: 100%;
 }
 
-#profession-Journalism > div .video > div {
+#profession-Lawyer > div .video > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,30 +26,30 @@
     margin-top: 10px;
 }
 
-#profession-Journalism > div .video > div > div {
+#profession-Lawyer > div .video > div > div {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-#profession-Journalism > div .video > div span {
+#profession-Lawyer > div .video > div span {
     border: 1px solid;
     border-radius: 2px;
     padding: 5px 10px;
 }
 
-#profession-Journalism > div > .about {
+#profession-Lawyer > div > .about {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-#profession-Journalism > div > .about p {
+#profession-Lawyer > div > .about p {
     border: 1px solid;
     padding: 20px;
 }
 
-#profession-Journalism button {
+#profession-Lawyer button {
     border-radius: 5px;
     border: none;
     background-color: white;
@@ -57,10 +57,10 @@
     padding: 10px 15px;
 }
 
-#profession-Journalism button:hover {
+#profession-Lawyer button:hover {
     background-color: rgb(245, 245, 245);
 }
 
-#profession-Journalism button:active {
+#profession-Lawyer button:active {
     background-color: rgb(235, 235, 235);
 }

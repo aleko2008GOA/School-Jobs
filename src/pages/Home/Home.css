@@ -5,6 +5,13 @@
     gap: 20px;
 }
 
+#homepage .pop-blogs {
+    margin: 0;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
 #homepage .about-program{
     background-color: white;
     border-radius: 20px;
@@ -18,17 +25,17 @@
 }
 
 #homepage .general-intoduction .blogs, #homepage .general-intoduction .about {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
-    justify-content: space-between;
-    align-items: stretch;
 }
 
 #homepage .general-intoduction .blogs > div {
-    flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
     background-color: white;
     border-radius: 20px;
     padding: 20px;
@@ -42,20 +49,31 @@
     padding: 20px;
 }
 
-#homepage .general-intoduction .blogs > div > .imgs {
-    flex: 1;
+#homepage .general-intoduction .blogs > div > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
 }
 
-#homepage .general-intoduction .blogs > div > .imgs img {
+#homepage .general-intoduction .blogs > div > div > .imgs {
+    flex: 3;
+    margin: 10px 5px;
+}
+
+#homepage .general-intoduction .blogs h1 {
+    margin: 5px;
+}
+
+#homepage .general-intoduction .blogs > div > div > .imgs img {
     width: 100%;
     height: 100%;
 }
 
-#homepage .general-intoduction .blogs > div > div:not(.imgs) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 2;
+#homepage .general-intoduction .blogs > div > div > div:not(.imgs) {
+    height: 100%;
+    flex: 4;
 }
 
 #homepage .general-intoduction .blogs > div > div:not(.imgs) > div > div {

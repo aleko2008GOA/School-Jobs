@@ -12,12 +12,10 @@ function Header(){
                     <NavLink to='/'>მთავარი</NavLink>
                     <NavLink to='/professions'>გზამკვლევი</NavLink>
                     <NavLink to='/about-us'>ჩვენს შესახებ</NavLink>
-                    <NavLink to='/calendar'>კალენდარი</NavLink>
                     <NavLink to='/contact-us'>კონტაქტი</NavLink>
                 </span>
-                <span className='registration'>
-                    <NavLink to='/sign-up' className='signup'>რეგისტრაცია</NavLink>
-                    <NavLink to='/sign-in' className='login'>ავტორიზაცია</NavLink>
+                <span className='tset-nav'>
+                    <NavLink to='/test' className='test'>პროფესიის არჩევა</NavLink>
                 </span>
             </nav>
         </div>

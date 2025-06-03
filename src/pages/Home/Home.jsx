@@ -26,36 +26,36 @@ function Home(){
         <div id="homepage">
             <div className='about-program'>
                 <h1>სამომავლო პროფესიების და კარიერული შესაძლებლობების გაცნობა</h1>
-                <p>პროგრამის შესახებ...</p><hr />
-                <h2>პოპულარული ბლოგები</h2>
+                <p>შესავალი...</p>
             </div>
+            <h2 className='pop-blogs' id="homepage-popblogs">პოპულარული ბლოგები</h2>
             <div className="general-intoduction">
                 {popularBlogs && popularBlogs.length > 0 ? 
                     <div className="blogs">
                         <div>
-                            <div className='imgs' style={{ aspectRatio: popularBlogs[0].img.ratio }}><img src={popularBlogs[0].img.src} alt={popularBlogs[0].img.src} /></div>
                             <div>
-                                <h1>{popularBlogs[0].profession}</h1>
+                                <div className='imgs' style={{ aspectRatio: popularBlogs[0].img.ratio }}><img src={popularBlogs[0].img.src} alt={popularBlogs[0].img.alt} /></div>
                                 <div>
-                                    <p>{popularBlogs[0].description}</p>
-                                    <div>
-                                        <span>Rate: {popularBlogs[0].rate}</span>
-                                        <button>იხილეთ სრულად</button>
-                                    </div>
+                                    <h1>{popularBlogs[0].profession}</h1>
+                                    <p dangerouslySetInnerHTML={{__html: popularBlogs[0].description}}></p>
                                 </div>
+                            </div>
+                            <div>
+                                <span style={{padding: "5px 10px", border: "1px solid", borderRadius: "2px"}}>შეფასება: {popularBlogs[0].rate}%</span>
+                                <Link to={`/professions/${popularBlogs[0].title.toLowerCase()}`}><button>იხილეთ სრულად</button></Link>
                             </div>
                         </div>
                         <div>
-                            <div className='imgs' style={{ aspectRatio: popularBlogs[0].img.ratio }}><img src={popularBlogs[1].img.src} alt={popularBlogs[1].img.src} /></div>
                             <div>
-                                <h1>{popularBlogs[1].profession}</h1>
+                                <div className='imgs' style={{ aspectRatio: popularBlogs[1].img.ratio }}><img src={popularBlogs[1].img.src} alt={popularBlogs[1].img.alt} /></div>
                                 <div>
-                                    <p>{popularBlogs[1].description}</p>
-                                    <div>
-                                        <span>Rate: {popularBlogs[1].rate}</span>
-                                        <button>იხილეთ სრულად</button>
-                                    </div>
+                                    <h1>{popularBlogs[1].profession}</h1>
+                                    <p dangerouslySetInnerHTML={{__html: popularBlogs[1].description}}></p>
                                 </div>
+                            </div>
+                            <div>
+                                <span style={{padding: "5px 10px", border: "1px solid", borderRadius: "2px"}}>შეფასება: {popularBlogs[1].rate}%</span>
+                                <Link to={`/professions/${popularBlogs[1].title.toLowerCase()}`}><button>იხილეთ სრულად</button></Link>
                             </div>
                         </div>
                     </div>
@@ -76,16 +76,34 @@ function Home(){
                     <div className='about-blogs'>
                         <h1>რატომ შეიქმნა?</h1>
                         <p>
-                            შეიქმნა რათა...
+                            <p>
+                                საიტი შეიქმნა იმისთვის, რომ ახალგაზრდებს და პროფესიის არჩევის პროცესში მყოფ 
+                                ადამიანებს დაეხმაროს უკეთ გაიცნონ სხვადასხვა სფერო და პროფესია უშუალოდ ამ 
+                                სფეროში მომუშავე ადამიანების გამოცდილების საშუალებით.
+                            </p>
+                            <p>ჩვენ ვაგროვებთ და ვაზიარებთ ვიდეოინტერვიუებს რეალურ პროფესიონალებთან, რომლებიც გულწრფელად გვიყვებიან:</p>
+                            <ul>
+                                <li>როგორ დაიწყეს კარიერა</li>
+                                <li>რას აკეთებდნენ ყოველდღიურად</li>
+                                <li>რა სირთულესა და წარმატებებს წააწყდნენ კარიერის განმავლობაში</li>
+                            </ul>
+                            <p>ჩვენი მიზანია, პროფესიული არჩევანი აღარ იყოს ბრმა რისკი — არამედ გააზრებული და ინფორმირებული გადაწყვეტილება.</p>
                         </p>
                     </div>
                 </div>
             </div>
-            <div className="goals">
+            <div className="goals" id="#homepage-goals">
                 <h1>სამომავლო მიზნები</h1>
-                <p>ჩვენი მიზნები...</p>
+                <ul>
+                    <li>მეტი პროფესიის დაფარვა სხვადასხვა სფეროდან</li>
+                    <li>ინტერვიუების დამატება მეტი ადამიანისთვის გასაგებად</li>
+                    <li>მოკლე გზამკვლევების შექმნა თითოეულ პროფესიაზე</li>
+                    <li>ძიების გაუმჯობესება ინტერესების მიხედვით</li>
+                    <li>პლატფორმის გაზრდა, სადაც ახალგაზრდები და პროფესიონალები დაუკავშირდებიან ერთმანეთს</li>
+                </ul>
+                <p>ჩვენი მიზანია, ყველას მივაწვდოთ მარტივად გასაგები და სასარგებლო ინფორმაცია, რათა პროფესიის არჩევა შეგნებული და თვითდაჯერებული გადაწყვეტილება გახდეს.</p>
             </div>
-            <div className='questions'>
+            <div className='questions' id="homepage-question">
                 <Questions />
                 <Link to="/test"><button>ჩემი პროფესიის არჩევა</button></Link>
             </div>

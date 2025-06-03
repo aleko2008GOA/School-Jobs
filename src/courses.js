@@ -1,17 +1,17 @@
 const blogs = [
     {
-        title: "Journalism",
-        profession: "ჟურნალისტიკა",
-        author: "ნანა ჩოკორაია",
+        title: "Lawyer",
+        profession: "იურისტი",
+        author: "თამარ ღლონტი",
         description: "Alalalalalalla",
         img: {
-            src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/1200px-IMG_Academy_Logo.svg.png",
-            ratio: 9 / 16,
-            alt: "ნანა ჩოკორაია"
+            src: "./src/assets/images/professions/lawyer.jpeg",
+            ratio: 3 / 4,
+            alt: "თამარ ღლონტი"
         },
         rate: 10.4,
         video: {
-            src: "https://www.youtube.com/embed/s_Fr_GO7fi4?si=4PQs9xGAqa_1NJj_",
+            src: "https://www.youtube.com/embed/etNvPt6aAKU?si=N3e6zOPy41eatjJz",
             title: "YouTube video player",
             allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
             referrerPolicy: "strict-origin-when-cross-origin",
@@ -22,10 +22,17 @@ const blogs = [
         title: "Journalism",
         profession: "ჟურნალისტიკა",
         author: "ნანა ჩოკორაია",
-        description: "Alalalalalalla",
+        description: 
+            `ამ ინტერვიუში ნანა ჩოკორაია, სპორტული ჟურნალისტი, გვიზიარებს საკუთარ პროფესიულ გზას. გაიგებ:
+            <ul>
+                <li>როგორ დაიწყო მისი კარიერა სპორტულ მედიაში</li>
+                <li>რა უნარებია საჭირო წარმატებული ჟურნალისტისთვის</li>
+                <li>როგორია მისი სამუშაო დღის სტრუქტურა</li>
+                <li>რეალური სირთულეები და წარმატებები სფეროში</li>
+            </ul>`,
         img: {
             src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/1200px-IMG_Academy_Logo.svg.png",
-            ratio: 9 / 16,
+            ratio: 3 / 4,
             alt: "ნანა ჩოკორაია"
         },
         rate: 10.4,

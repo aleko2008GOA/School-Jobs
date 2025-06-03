@@ -25,7 +25,7 @@ function Questions(){
 
     return (
         <form onSubmit={handleSubmit} id="questions">
-            <label htmlFor='question-homepage'>Your question:</label>
+            <label htmlFor='question-homepage'>შენი შეკითხვა:</label>
             <input 
                 type='text' 
                 name='question' 

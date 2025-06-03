@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { blogs } from "../../../courses.js";
-import './Journalism.css';
+import './Lawyer.css';
 import Questions from "../../../components/Questions/Questions.jsx";
 import { Link } from "react-router-dom";
 
-function Journalism(){
+function Lawyer(){
     const [blog, setBlog] = useState(null);
 
     useEffect(() => {
-        setBlog(blogs.find(blog => blog.title === "Journalism"));
+        setBlog(blogs.find(blog => blog.title === "Lawyer"));
     }, []);
 
     return (
-        <div id="profession-Journalism">
+        <div id="profession-Lawyer">
             {blog ? (
             <div>
                 <div className="video">
@@ -26,7 +26,7 @@ function Journalism(){
                     ></iframe>
                     <div>
                         <div>
-                            <span>გაიცანი - {blog.author}, შენი კარიერული გზამკვლევი ჟურნალისტიკაში</span>
+                            <span>გაიცანი - {blog.author}, შენი კარიერული გზამკვლევი სამართალში</span>
                             <span>შეფასება: {blog.rate}%</span>
                         </div>
                         <Link to="/professions"><button>Back</button></Link>
@@ -45,4 +45,4 @@ function Journalism(){
     )
 }
 
-export default Journalism;
+export default Lawyer;
