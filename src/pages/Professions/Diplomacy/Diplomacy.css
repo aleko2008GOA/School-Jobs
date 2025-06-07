@@ -1,0 +1,66 @@
+#profession-Diplomacy {
+    padding: 20px 5%;
+}
+
+#profession-Diplomacy > div {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#profession-Diplomacy > div > * {
+    flex: 1;
+}
+
+#profession-Diplomacy > div .video iframe {
+    width: 100%;
+}
+
+#profession-Diplomacy > div .video > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#profession-Diplomacy > div .video > div > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#profession-Diplomacy > div .video > div span {
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 5px 10px;
+}
+
+#profession-Diplomacy > div > .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#profession-Diplomacy > div > .about p {
+    border: 1px solid;
+    padding: 20px;
+}
+
+#profession-Diplomacy button {
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    transition: 0.5s background-color;
+    padding: 10px 15px;
+}
+
+#profession-Diplomacy button:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#profession-Diplomacy button:active {
+    background-color: rgb(235, 235, 235);
+}

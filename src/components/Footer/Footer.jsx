@@ -26,14 +26,6 @@ function Footer(){
                 <p><Link to="/contact-us">დაკავშირება</Link></p>
                 <p><Link to="/#homepage-goals">მიზნები</Link></p>
             </div>
-            <div>
-                <h5>სოციალური ქსელები</h5>
-                <div>
-                    <nav><Link><FontAwesomeIcon icon={faFacebookF} /></Link></nav>
-                    <nav><Link><FontAwesomeIcon icon={faTwitter} /></Link></nav>
-                    <nav><Link><FontAwesomeIcon icon={faInstagram} /></Link></nav>
-                </div>
-            </div>
         </footer>
     );
 }

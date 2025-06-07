@@ -1,0 +1,66 @@
+#profession-Philology {
+    padding: 20px 5%;
+}
+
+#profession-Philology > div {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#profession-Philology > div > * {
+    flex: 1;
+}
+
+#profession-Philology > div .video iframe {
+    width: 100%;
+}
+
+#profession-Philology > div .video > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#profession-Philology > div .video > div > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#profession-Philology > div .video > div span {
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 5px 10px;
+}
+
+#profession-Philology > div > .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#profession-Philology > div > .about p {
+    border: 1px solid;
+    padding: 20px;
+}
+
+#profession-Philology button {
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    transition: 0.5s background-color;
+    padding: 10px 15px;
+}
+
+#profession-Philology button:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#profession-Philology button:active {
+    background-color: rgb(235, 235, 235);
+}

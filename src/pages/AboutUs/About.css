@@ -1,0 +1,22 @@
+#about {
+    padding: 30px 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#about > h1 {
+    margin: 0;
+}
+
+#about > * {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#about .centered-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

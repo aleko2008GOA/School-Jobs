@@ -41,7 +41,7 @@ function Home(){
                                 </div>
                             </div>
                             <div>
-                                <span style={{padding: "5px 10px", border: "1px solid", borderRadius: "2px"}}>შეფასება: {popularBlogs[0].rate}%</span>
+                                <span style={{padding: "5px 10px", border: "1px solid", borderRadius: "2px"}}>შეფასება: {popularBlogs[0].rate}</span>
                                 <Link to={`/professions/${popularBlogs[0].title.toLowerCase()}`}><button>იხილეთ სრულად</button></Link>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ function Home(){
                                 </div>
                             </div>
                             <div>
-                                <span style={{padding: "5px 10px", border: "1px solid", borderRadius: "2px"}}>შეფასება: {popularBlogs[1].rate}%</span>
+                                <span style={{padding: "5px 10px", border: "1px solid", borderRadius: "2px"}}>შეფასება: {popularBlogs[1].rate}</span>
                                 <Link to={`/professions/${popularBlogs[1].title.toLowerCase()}`}><button>იხილეთ სრულად</button></Link>
                             </div>
                         </div>

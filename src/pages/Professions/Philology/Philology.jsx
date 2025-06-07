@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { blogs } from "../../../courses.js";
-import './Journalism.css';
+import './Philology.css';
 import Questions from "../../../components/Questions/Questions.jsx";
 import { Link } from "react-router-dom";
 
-function Journalism(){
+function Philology(){
     const [blog, setBlog] = useState(null);
 
     useEffect(() => {
-        setBlog(blogs.find(blog => blog.title === "Journalism"));
+        setBlog(blogs.find(blog => blog.title === "Philology"));
     }, []);
 
     return (
-        <div id="profession-Journalism">
+        <div id="profession-Philology">
             {blog ? (
             <div>
                 <div className="video">
@@ -45,4 +45,4 @@ function Journalism(){
     )
 }
 
-export default Journalism;
+export default Philology;

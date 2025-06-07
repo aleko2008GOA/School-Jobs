@@ -1,10 +1,20 @@
 import { Link, Outlet } from 'react-router-dom';
 import './Professions.css';
 import { blogs } from '../../courses.js';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 function Professions(){
     const [filter, setFilter] = useState('HtoL');
+
+    const sortedBlogs = useMemo(() => {
+        return blogs
+            .slice()
+            .sort((b1, b2) => {
+                if(filter === "HtoL") return b2.rate - b1.rate;
+                else if (filter === "LtoH") return b1.rate - b2.rate;
+                else return b1.profession.localeCompare(b2.profession, 'ka');
+            });
+    }, [filter]);
 
     return (
         <div id="professions">
@@ -16,7 +26,7 @@ function Professions(){
                 </select>
             </div>
             <div className='blogs'>
-                {blogs && blogs.length > 0 ? blogs.sort((blog1, blog2) => filter === "HtoL" ? blog2.rate - blog1.rate : filter === "HtoL" ? blog1.rate - blog2.rate : blog1.title.localeCompare(blog2.title)).map((blog, index) => (
+                {sortedBlogs ? sortedBlogs.map((blog, index) => (
                     <div key={index}>
                         <div>
                             <div className='imgs' style={{ aspectRatio: blog.img.ratio }}><img src={blog.img.src} alt={blog.img.alt} /></div>
@@ -26,7 +36,7 @@ function Professions(){
                             </div>
                         </div>
                         <div>
-                            <span style={{padding: "5px 10px", border: "1px solid", borderRadius: "2px"}}>შეფასება: {blog.rate}%</span>
+                            <span style={{padding: "5px 10px", border: "1px solid", borderRadius: "2px"}}>შეფასება: {blog.rate}</span>
                             <Link to={`/professions/${blog.title.toLowerCase()}`}><button>იხილეთ სრულად</button></Link>
                         </div>
                     </div>

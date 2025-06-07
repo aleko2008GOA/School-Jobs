@@ -27,7 +27,7 @@ function Lawyer(){
                     <div>
                         <div>
                             <span>გაიცანი - {blog.author}, შენი კარიერული გზამკვლევი სამართალში</span>
-                            <span>შეფასება: {blog.rate}%</span>
+                            <span>შეფასება: {blog.rate}</span>
                         </div>
                         <Link to="/professions"><button>Back</button></Link>
                     </div>

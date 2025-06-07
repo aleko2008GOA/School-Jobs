@@ -1,0 +1,66 @@
+#profession-Business {
+    padding: 20px 5%;
+}
+
+#profession-Business > div {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#profession-Business > div > * {
+    flex: 1;
+}
+
+#profession-Business > div .video iframe {
+    width: 100%;
+}
+
+#profession-Business > div .video > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#profession-Business > div .video > div > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#profession-Business > div .video > div span {
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 5px 10px;
+}
+
+#profession-Business > div > .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#profession-Business > div > .about p {
+    border: 1px solid;
+    padding: 20px;
+}
+
+#profession-Business button {
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    transition: 0.5s background-color;
+    padding: 10px 15px;
+}
+
+#profession-Business button:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#profession-Business button:active {
+    background-color: rgb(235, 235, 235);
+}
