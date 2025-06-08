@@ -1,5 +1,4 @@
-import './Contact.css';
-import { Link } from 'react-router-dom';
+import './Contact.css'
 import logo from '../../assets/images/logo/476905062_1144419557228910_1001797474761144907_n.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons';
