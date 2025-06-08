@@ -1,0 +1,41 @@
+#contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 4%;
+}
+
+#contact h1 {
+    text-align: center;
+    margin: 0;
+}
+
+#contact > * {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#contact > div > div {
+    flex: 1;
+}
+
+#contact a {
+    color: black;
+    font-size: 20px;
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: #606060;
+}
+
+#contact img {
+    width: 100%;
+    border-radius: 5px;
+}
