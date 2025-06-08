@@ -240,4 +240,22 @@ const statistic = [
     { name: 'კულტურა და მედიახელოვნება', vote: 15 }
 ];
 
-export { blogs, statistic };
+
+const questions = [
+    { 
+        question: "საყვარელი საგანი", 
+        name: "fav_lesson", 
+        answers: [
+            { 
+                answer: "მათემატიკა",
+                scores: { ComputerScience: 3, Philology: 1 }
+            }, 
+            { 
+                answer: "ფიზიკა",
+                scores: { ComputerScience: 3, Philology: 2 } 
+            }
+        ] 
+    },
+];
+
+export { blogs, statistic, questions };

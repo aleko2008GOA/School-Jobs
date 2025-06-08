@@ -30,6 +30,10 @@
     text-decoration: none;
 }
 
+#footer-styles a:hover {
+    color: #606060;
+}
+
 #footer-styles div div {
     display: flex;
     gap: 10px;

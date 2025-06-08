@@ -1,0 +1,43 @@
+#test {
+    padding: 20px 4%;
+}
+
+#test > * {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#test form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#test form > fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+}
+
+#test form > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#test form > div input {
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(245, 245, 245);
+    transition: 0.5s background-color;
+    padding: 10px 15px;
+}
+
+#test form > div input:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+#test form > div input:active {
+    background-color: rgb(215, 215, 215);
+}

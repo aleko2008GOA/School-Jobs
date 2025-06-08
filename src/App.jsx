@@ -19,38 +19,41 @@ import GraphicDesign from './pages/Professions/Graphic-Design/Graphic-Design.jsx
 import Medical from './pages/Professions/Medical/Medical.jsx';
 import Philology from './pages/Professions/Philology/Philology.jsx';
 import Science from './pages/Professions/Science/Science.jsx';
+import { ProfessionProvider } from './components/Context/ProfessionsContext.jsx';
 
 function App() {
   return (
     <BrowserRouter basename='/'>
-      <ScrollToTop />
-      {/* main components */}
-      <div id='website'>
-        <Header />
-        
-        {/* links */}
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/professions' element={<Professions />} />
-            <Route path='/professions/journalism' element={<Journalism />} />
-            <Route path='/professions/lawyer' element={<Lawyer />} />
-            <Route path='/professions/business' element={<Business />} />
-            <Route path='/professions/computer-science' element={<ComputerScience />} />
-            <Route path='/professions/culture' element={<Culture />} />
-            <Route path='/professions/diplomacy' element={<Diplomacy />} />
-            <Route path='/professions/electrical-engineering' element={<ElectricalEngineering />} />
-            <Route path='/professions/graphic-design' element={<GraphicDesign />} />
-            <Route path='/professions/medical' element={<Medical />} />
-            <Route path='/professions/philology' element={<Philology />} />
-            <Route path='/professions/science' element={<Science />} />
-          <Route path='/contact-us' element={<Contact />} />
-          <Route path='/about-us' element={<About />} />
-          <Route path='/test' element={<Test />} />
-        </Routes>
+      <ProfessionProvider>
+        <ScrollToTop />
+        {/* main components */}
+        <div id='website'>
+          <Header />
+          
+          {/* links */}
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/professions' element={<Professions />} />
+              <Route path='/professions/journalism' element={<Journalism />} />
+              <Route path='/professions/lawyer' element={<Lawyer />} />
+              <Route path='/professions/business' element={<Business />} />
+              <Route path='/professions/computer-science' element={<ComputerScience />} />
+              <Route path='/professions/culture' element={<Culture />} />
+              <Route path='/professions/diplomacy' element={<Diplomacy />} />
+              <Route path='/professions/electrical-engineering' element={<ElectricalEngineering />} />
+              <Route path='/professions/graphic-design' element={<GraphicDesign />} />
+              <Route path='/professions/medical' element={<Medical />} />
+              <Route path='/professions/philology' element={<Philology />} />
+              <Route path='/professions/science' element={<Science />} />
+            <Route path='/contact-us' element={<Contact />} />
+            <Route path='/about-us' element={<About />} />
+            <Route path='/test' element={<Test />} />
+          </Routes>
 
-        {/* footer */}
-        <Footer />
-      </div>
+          {/* footer */}
+          <Footer />
+        </div>
+      </ProfessionProvider>
     </BrowserRouter>
   )
 }

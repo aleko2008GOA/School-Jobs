@@ -1,25 +1,29 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Professions.css';
 import { blogs } from '../../courses.js';
 import { useState, useMemo } from 'react';
+import useProfessions from '../../components/Hooks/useProfessions.jsx';
 
 function Professions(){
-    const [filter, setFilter] = useState('HtoL');
+    const [filter, setFilter] = useState('BmyR');
+    const { favProfessions } = useProfessions();
 
     const sortedBlogs = useMemo(() => {
         return blogs
             .slice()
             .sort((b1, b2) => {
-                if(filter === "HtoL") return b2.rate - b1.rate;
+                if (filter === "BmyR") return favProfessions ? favProfessions[b2.title.replace(/-/g, "")] - favProfessions[b1.title.replace(/-/g, "")] : b2.rate - b1.rate;
+                else if(filter === "HtoL") return b2.rate - b1.rate;
                 else if (filter === "LtoH") return b1.rate - b2.rate;
                 else return b1.profession.localeCompare(b2.profession, 'ka');
             });
-    }, [filter]);
+    }, [filter, favProfessions]);
 
     return (
         <div id="professions">
             <div>
                 <select className='filter' onChange={(e) => setFilter(e.target.value)}>
+                    <option value="BmyR">ტეტსის შედეგების მიხედვით</option>
                     <option value="HtoL">რეიტინგი (მაღლიდან დაბლისაკენ)</option>
                     <option value="LtoH">რეიტინგი (დაბლიდან მაღლისაკენ)</option>
                     <option value="AtoZ">სიის მიხედვით</option>

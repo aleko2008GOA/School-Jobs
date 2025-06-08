@@ -3,7 +3,6 @@ import './Footer.css';
 import logo from '../../assets/images/logo/476905062_1144419557228910_1001797474761144907_n.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function Footer(){
     return (
