@@ -31,7 +31,7 @@ button {
 button:hover { background-color: rgb(235, 235, 235); }
 button:active { background-color: rgb(215, 215, 215); }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   h1 { font-size: 1.5rem; }
   h2 { font-size: 1.25rem; }
   h3 { font-size: 1.125rem; }
