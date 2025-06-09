@@ -105,7 +105,9 @@ function Home(){
             </div>
             <div className='questions' id="homepage-question">
                 <Questions />
-                <Link to="/test"><button>ჩემი პროფესიის არჩევა</button></Link>
+                <div>
+                    <Link to="/test"><button>ჩემი პროფესიის არჩევა</button></Link>
+                </div>
             </div>
         </div>
     )

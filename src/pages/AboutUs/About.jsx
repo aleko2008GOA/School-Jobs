@@ -6,17 +6,17 @@ function About(){
     const [paginationModel, setPaginationModel] = useState({ pageSize: 8, page: 0, });
 
     const columns = [
-        { field: 'participant', headerName: 'მონაწილე', flex: 1 },
-        { field: 'projectWriting', headerName: 'პროექტის დაწერა', flex: 1, cellClassName: 'centered-cell' },
-        { field: 'questionnaire', headerName: 'კითხვარი პროფესიების შესარჩევად / ტესტი', flex: 1, cellClassName: 'centered-cell' },
-        { field: 'findProfessors', headerName: 'პროფესორების პოვნა', flex: 1, cellClassName: 'centered-cell' },
-        { field: 'blogFilming', headerName: 'ბლოგების გადაღება', flex: 1, cellClassName: 'centered-cell' },
-        { field: 'videoEditing', headerName: 'ვიდეო და აუდიო მონტაჟი', flex: 1, cellClassName: 'centered-cell' },
-        { field: 'siteStructure', headerName: 'საიტის სტრუქტურა', flex: 1, cellClassName: 'centered-cell' },
-        { field: 'uiux', headerName: 'საიტის UI და UX', flex: 1, cellClassName: 'centered-cell' },
-        { field: 'logo', headerName: 'ლოგო', flex: 1, cellClassName: 'centered-cell' },
-        { field: 'siteBuilding', headerName: 'საიტის აწყობა', flex: 1, cellClassName: 'centered-cell' },
-        { field: 'siteDebugging', headerName: 'საიტის დებაგინგი', flex: 1, cellClassName: 'centered-cell' }
+        { field: 'participant', headerName: 'მონაწილე', flex: 1, minWidth: 60 },
+        { field: 'projectWriting', headerName: 'პროექტის დაწერა', flex: 1, minWidth: 60, cellClassName: 'centered-cell' },
+        { field: 'questionnaire', headerName: 'კითხვარი პროფესიების შესარჩევად / ტესტი', flex: 1, minWidth: 60, cellClassName: 'centered-cell' },
+        { field: 'findProfessors', headerName: 'პროფესორების პოვნა', flex: 1, minWidth: 60, cellClassName: 'centered-cell' },
+        { field: 'blogFilming', headerName: 'ბლოგების გადაღება', flex: 1, minWidth: 60, cellClassName: 'centered-cell' },
+        { field: 'videoEditing', headerName: 'ვიდეო და აუდიო მონტაჟი', flex: 1, minWidth: 60, cellClassName: 'centered-cell' },
+        { field: 'siteStructure', headerName: 'საიტის სტრუქტურა', flex: 1, minWidth: 60, cellClassName: 'centered-cell' },
+        { field: 'uiux', headerName: 'საიტის UI და UX', flex: 1, minWidth: 60, cellClassName: 'centered-cell' },
+        { field: 'logo', headerName: 'ლოგო', flex: 1, minWidth: 60, cellClassName: 'centered-cell' },
+        { field: 'siteBuilding', headerName: 'საიტის აწყობა', flex: 1, minWidth: 60, cellClassName: 'centered-cell' },
+        { field: 'siteDebugging', headerName: 'საიტის დებაგინგი', flex: 1, minWidth: 60, cellClassName: 'centered-cell' }
     ];
       
     const rows = [

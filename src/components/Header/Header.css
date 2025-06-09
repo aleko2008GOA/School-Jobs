@@ -6,6 +6,10 @@
     padding: 15px 4%;
 }
 
+#header-styles .burger, #header-styles .burger-nav {
+    display: none;
+}
+
 #header-styles {
     padding: 10px;
 }
@@ -23,7 +27,14 @@
 }
 
 #header-styles nav .main-nav{
-    overflow-x: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#header-styles nav .main-nav::-webkit-scrollbar{
+    display: none;
 }
 
 #header-styles .test{
@@ -51,4 +62,50 @@
 
 #header-styles a:active {
     background-color: lightgrey;
+}
+
+@media (max-width: 768px) {
+    #header-styles nav {
+        padding: 10px 2%;
+    }
+
+    #header-styles .basic-nav {
+        display: none;
+    }
+
+    #header-styles .burger {
+        display: inline-block;
+    }
+
+    #header-styles .burger-container {
+        position: relative;
+    }
+
+    #header-styles .burger-nav {
+        height: 0;
+    }
+
+    #header-styles .burger-nav.active {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        z-index: 10;
+        padding: 10px;
+        background-color: rgb(235, 235, 235);
+        height: auto;
+    }
+
+    #header-styles nav .main-nav{
+        overflow-x: visible;
+        white-space: normal;
+        scrollbar-width: auto;
+        -ms-overflow-style: auto;
+    }
+    
+    #header-styles nav .main-nav::-webkit-scrollbar{
+        display: block;
+    }
 }

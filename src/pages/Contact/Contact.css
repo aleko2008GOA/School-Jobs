@@ -39,3 +39,17 @@
     width: 100%;
     border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+    #contact {
+        margin: 10px 2%;
+    }
+
+    #contact > * {
+        flex-direction: column;
+    }
+
+    #contact a {
+        font-size: 18px;
+    }
+}

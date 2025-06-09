@@ -20,3 +20,34 @@ p { font-size: 1rem; }
   min-height: 100vh;
   justify-content: space-between;
 }
+
+button {
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(245, 245, 245);
+  transition: 0.5s background-color;
+  padding: 10px 15px;
+}
+button:hover { background-color: rgb(235, 235, 235); }
+button:active { background-color: rgb(215, 215, 215); }
+
+@media (max-width: 768px) {
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.125rem; }
+  h4 { font-size: 1rem; }
+  h5 { font-size: 0.875rem; }
+  h6 { font-size: 0.75rem; }
+
+  button, p, a, li { font-size: 0.875rem; }
+
+  #website {
+    padding: 1rem;
+  }
+}
+
+@media (hover: none) {
+  *:hover {
+    background-color: initial;
+  }
+}

@@ -41,3 +41,9 @@
 #test form > div input:active {
     background-color: rgb(215, 215, 215);
 }
+
+@media (max-width: 768px) {
+    #test {
+        padding: 10px 2%;
+    }
+}

@@ -92,6 +92,7 @@
 #homepage .questions {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     background-color: white;
     border-radius: 20px;
     padding: 20px;
@@ -99,16 +100,37 @@
 
 #homepage button {
     border-radius: 5px;
-    border: none;
-    background-color: white;
+    border: none;    
+    background-color: rgb(245, 245, 245);
     transition: 0.5s background-color;
     padding: 10px 15px;
 }
 
 #homepage button:hover {
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(235, 235, 235);
 }
 
 #homepage button:active {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(215, 215, 215);
+}
+
+@media (max-width: 768px) {
+    #homepage {
+        padding: 10px 2.5%;
+    }
+
+    #homepage .general-intoduction .blogs, #homepage .general-intoduction .about {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #homepage .questions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #homepage button {
+        width: 100%;
+    }
 }

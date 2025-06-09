@@ -46,7 +46,7 @@ const blogs = [
     },
     {
         title: "Business",
-        profession: "ბიზნეს ადმინისტრირება და მენეჯმანტი",
+        profession: "ბიზნეს ადმინისტრირება და მენეჯმენტი",
         author: "",
         description: 
             ``,

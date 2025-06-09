@@ -33,7 +33,7 @@ function Questions(){
                 placeholder={["როგორ მივიღო მონაწიელობა გამოკითხვაში?", "სერვერზე შეცდომაა", "საიტი არ იმახსოვრებს ჩემს ქმედებებს", "არც ერთი პროფესია არ მომწონს", "სად არის ვიდეოები განთავსებული?", "რატომ არ იხსნება ვიდეო?"][Math.floor(Math.random() * 6)]} 
                 required
             />
-            <button type='submit'>Send</button>
+            <button type='submit'>გაგზავნა</button>
         </form>
     )
 }

@@ -1,5 +1,6 @@
 #footer-styles{
     display: flex;
+    gap: 5px;
     border-radius: 10px 10px 0 0;
     margin-top: 50px;
     padding: 30px 8% 50px 8%;
@@ -56,4 +57,13 @@
 
 #footer-styles div div nav:active {
     background-color: rgb(225, 225, 225);
+}
+
+@media (max-width: 768px) {
+    #footer-styles{
+        display: flex;
+        border-radius: 5px 5px 0 0;
+        margin-top: 20px;
+        padding: 10px 4% 20px 4%;
+    }
 }
