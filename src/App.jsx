@@ -20,6 +20,7 @@ import Medical from './pages/Professions/Medical/Medical.jsx';
 import Philology from './pages/Professions/Philology/Philology.jsx';
 import Science from './pages/Professions/Science/Science.jsx';
 import { ProfessionProvider } from './components/Context/ProfessionsContext.jsx';
+import Secret from './pages/Sercret/Secret.jsx';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             <Route path='/contact-us' element={<Contact />} />
             <Route path='/about-us' element={<About />} />
             <Route path='/test' element={<Test />} />
+            <Route path='/secret' element={<Secret />} />
           </Routes>
 
           {/* footer */}
