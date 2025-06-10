@@ -27,7 +27,7 @@ function About(){
         { id: 5, participant: 'ალექსანდრე მელიქჯანიანი', projectWriting: '', questionnaire: '✓', findProfessors: '', blogFilming: '', videoEditing: '', siteStructure: '✓', uiux: '', logo: '', siteBuilding: '✓', siteDebugging: '✓' },
         { id: 6, participant: 'საბა სილაგაძე', projectWriting: '', questionnaire: '', findProfessors: '', blogFilming: '', videoEditing: '', siteStructure: '', uiux: '✓', logo: '✓', siteBuilding: '', siteDebugging: '' },
         { id: 7, participant: 'დავით დიასამიძე', projectWriting: '', questionnaire: '', findProfessors: '', blogFilming: '', videoEditing: '', siteStructure: '✓', uiux: '', logo: '', siteBuilding: '✓', siteDebugging: '' },
-        { id: 8, participant: 'საბა ქიტიაშვილი', projectWriting: '', questionnaire: '', findProfessors: '✓', blogFilming: '', videoEditing: '', siteStructure: '', uiux: '', logo: '', siteBuilding: '', siteDebugging: '✓' }
+        { id: 8, participant: 'საბა ქიტიაშვილი', projectWriting: '', questionnaire: '', findProfessors: '', blogFilming: '', videoEditing: '', siteStructure: '', uiux: '', logo: '', siteBuilding: '✓', siteDebugging: '✓' }
     ];
 
     return (
